@@ -1,0 +1,29 @@
+{
+  "name": "axe-react",
+  "version": "0.0.1",
+  "description": "axe using in react-native",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingForMoney/axe-react.git"
+  },
+  "keywords": [
+    "axe",
+    "react-native"
+  ],
+  "peerDependencies": {
+    "react-native": "0.54.1"
+  },
+  "devDependencies": {
+    "react-native": "0.54.1"
+  },
+  "author": "lxm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingForMoney/axe-react/issues"
+  },
+  "homepage": "https://github.com/CodingForMoney/axe-react#readme"
+}
