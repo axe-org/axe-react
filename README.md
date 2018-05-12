@@ -8,44 +8,15 @@ axe interface using in react-native
 
 	npm install axe-react --save
 
-## 使用示例 ：
+## 接口文件
 
-	import axe from 'axe-react'
-	
-	
-	onGetDataTest() {
-	    axe.data.shared.get("react_test",(date) => {
-	      this.log("axedata.shared.get   " + date);
-	    });
-  	}
-	onRouteTest(){
-		axe.router.route("react://localhost:8081/index.bundle?platform=ios&_moduleName=Awesome")
-	}
-	onRouteWithCallbackTest(){
-		let data = axe.data.createData()
-		data.setString("react" ,"hello world!!!");
-		axe.router.route("react://localhost:8081/index.bundle?platform=ios&_moduleName=Awesome",data, (responseData) => {
-		  this.log("获取回调返回参数中的 react " + responseData.get("react"));
-	})
-	}
-	onCallbackTest(){
-		let data = axe.data.createData()
-		data.setString("react" ,"onCallbackTest !!!");
-		axe.router.callback(data)
-	}
-	
-	onTestEventListener(){
-	axe.event.registerListener('event_test',(data) => {
-	  this.log("接收到 event_test 通知 。 时间为 " + data.get('date'));
-	})
-	}
-	onTestEventRemove(){
-		axe.event.removeListener('event_test');
-	}
-	onTestEventPostEvent(){
-		let data = axe.data.createData()
-		data.setDate('date',new Date())
-		axe.event.postEvent('event_test',data);
-	}
+见 [src/index.d.ts](src/index.d.ts)
 
-项目基本完成后，再来完善示例以及接口说明。
+## 使用示例
+
+* [demo-login-react](https://github.com/axe-org/demo-login-react)
+* [demo-test-react](https://github.com/axe-org/demo-test-react)
+
+## 注意事项
+
+* 与`axe4js`接口的区别，暂时只有一处， `axe4js`中获取路由信息是异步函数，而在`axe-react`中，路由信息是一属性 `axe.router.routeInfo`

@@ -62,5 +62,5 @@ export default {
   route: routerFunc,
   callback: routerCallback,
   // 上次跳转信息。
-  lastRoute: _sourceInfo // 同步获取source.
+  routeInfo: _sourceInfo // 同步获取source.
 }

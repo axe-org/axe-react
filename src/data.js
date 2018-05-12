@@ -30,8 +30,8 @@ sharedData.get = function (key, callback) {
 }
 
 export default {
-  shared: sharedData,
-  createData: function () {
+  sharedData: sharedData,
+  create: function () {
     return new AXEData()
   }
 }
