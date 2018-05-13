@@ -19,4 +19,4 @@ axe interface using in react-native
 
 ## 注意事项
 
-* 与`axe4js`接口的区别，暂时只有一处， `axe4js`中获取路由信息是异步函数，而在`axe-react`中，路由信息是一属性 `axe.router.routeInfo`
+* 与`axe4js`接口的区别，暂时只有一处， `axe4js`中获取路由信息是异步函数，而在`axe-react`中，路由信息是固定属性 `axe.router.routeInfo`

@@ -1,4 +1,4 @@
-declare module 'axe4js' {
+declare module 'axe-react' {
   export interface Data {
     /**
       * 全局共享的数据， 单例。
