@@ -15,7 +15,7 @@ export const is = {
 is.types.forEach(function (type) {
   is[type] = (function (type) {
     return function (obj) {
-      return Object.prototype.toString.call(obj) == '[object ' + type + ']';
+      return Object.prototype.toString.call(obj) === '[object ' + type + ']'
     }
   }(type))
 })
@@ -62,7 +62,7 @@ AXEData.prototype = {
     }
   },
   setBoolean: function (key, value) {
-    if (key && value && is.String(key)) {
+    if (key && is.String(key)) {
       if (is.Boolean(value)) {
         this.setObjectForKey(key, {
           value: '' + value,

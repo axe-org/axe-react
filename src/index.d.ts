@@ -1,5 +1,5 @@
 declare module 'axe-react' {
-  export interface Data {
+  interface Data {
     /**
       * 全局共享的数据， 单例。
       */
@@ -10,7 +10,7 @@ declare module 'axe-react' {
     create(): Payload;
   }
 
-  export interface Router {
+  interface Router {
     /**
      * 使用路由进行页面跳转。
      * @param url 跳转的具体URL， 不建议在URL上拼接参数。
@@ -32,7 +32,7 @@ declare module 'axe-react' {
     readonly routeInfo: RouterInfo;
   }
 
-  export interface Event {
+  interface Event {
     /**
      * 发送事件通知
      * @param event 事件名 
@@ -53,7 +53,7 @@ declare module 'axe-react' {
     removeListener(event: string);
   }
 
-  export interface RouterInfo {
+  interface RouterInfo {
     /**
      * 路由跳转时，传递的参数
      */
@@ -64,7 +64,7 @@ declare module 'axe-react' {
     readonly needCallback: boolean;
   }
 
-  export interface Payload {
+  interface Payload {
     /**
       * 设置 Number 类型
       */
@@ -105,7 +105,7 @@ declare module 'axe-react' {
     /**
       * 设置 Date类型 对应iOS中的 NSDate， java中的 Date . 
       * 
-      * @param value 值， 为base64字符串。
+      * @param value 值， Date类型。
       */
     setDate(key: string, value: date):void;
     /**
@@ -121,13 +121,36 @@ declare module 'axe-react' {
     get(key: string):any;
   }
 
-  export interface SharedData extends Payload {
+  interface SharedData extends Payload {
     /**
      * 共享数据不能使用 同步的get方法， 必须使用异步的get 方法。
      * @param key 
      * @param callback 
      */
     get(key: string, callback: (any) => void): void;
+  }
+
+  interface NavigationUtil {
+    /**
+     * 模块内页面跳转。 使用原生导航栏和NavigationController
+     * @param pageName 页面名，即通过 AppRegistry.registerComponent 注册的具体页面。
+     */
+    push(pageName: string): void;
+    /**
+     * 模块内页面跳转。 跳转到新页面后，会将原有页面从堆栈中删除。
+     * @param pageName 页面名，即通过 AppRegistry.registerComponent 注册的具体页面。
+     */
+    redirect(pageName: string):void;
+    /**
+     * 关闭当前页面。
+     */
+    closePage(): void;
+
+    /**
+     * 设置导航栏标题
+     * @param title 标题。
+     */
+    setTitle(title: string): void;
   }
 
   /**
@@ -142,4 +165,9 @@ declare module 'axe-react' {
    * 事件
    */
   export var event: Event;
+
+  /**
+   * 导航工具， 非 axe基础组件。
+   */
+  export var navigation: NavigationUtil;
 }
