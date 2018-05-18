@@ -39,9 +39,9 @@ let registerFunc = function (eventName, callback) {
     if (!callbackList) {
       callbackList = []
       registeredEvents[eventName] = callbackList
+      axeEvent.registerListener(eventName)
     }
     callbackList.push(callback)
-    axeEvent.registerListener(eventName)
   }
 }
 // 取消注册函数 , 需要注意，这里取消监听，会直接删掉当前网页的这个 eventName的全部监听。
