@@ -12,10 +12,6 @@ axe interface using in react-native
 
 见 [src/index.d.ts](src/index.d.ts)
 
-## 接口声明
-
-见 [main.d.ts](src/main.d.ts)文件
-
 ## 数据类型说明 
 
 #### 基础数据类型
